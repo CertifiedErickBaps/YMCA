@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-flex.min.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+
+    <title>YMCA</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">  
+
+    <!-- Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase-firestore.js"></script>
+  </head>
+  
+  <body>
+  <!-- Header -->
+    <header id="header-container">
+      <div class="container">
+        <div class="row flex-items-xs-middle flex-items-xs-between">
+          <div class="col-xs-3">
+            <h1>YMCA</h1>
+          </div>
+           
+        </div>
+      </div>
+    </header>  
+<!-- Header -->
+ 
+<!-- Datos -->
+    <div class="container datos">
+      <div class="row flex-items-xs-middle flex-items-xs-between">
+        <div class="col-xs-7">
+          <h4>Solicitud de inscripción como asociado numerario</h4>
+        </div>
+      </div>    
+    </div>
+
+    <div class="container">
+      <form>
+        <div class="form-group row flex-items-xs-right">
+          <label for="inputEmail3" class="col-sm-1 col-form-label">Cuota</label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control is-valid" id="cuota" required>
+          </div>
+          <label for="inputEmail3" class="col-sm-2 col-form-label text-xs-center">Autorización: </label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control is-valid" id="autorizacion" required>
+          </div>
+        </div>
+        
+        
+        <div class="form-group row sexo">
+          <label for="input" class="col-sm-5 col-form-label">Centro YMCA Educativo de Acción Comunitaria: </label>
+          <div class="col-sm-2">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="atizapan" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Atizapán
+            </label>
+          </div>
+          <div class="col-sm-2">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="iztacalco" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+            Iztacalco
+            </label>
+          </div>            
+          <div class="col-sm-2">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="naucalpan" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+            Naucalpan
+            </label>
+          </div>            
+        </div> 
+
+        <div class="form-group row flex-items-xs-right">
+          <div class="col-sm-3">
+            <input class="form-check-input" type="radio" name="exampleRadios1" id="nuevoIngreso" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Nuevo ingreso
+            </label>
+          </div>
+          <div class="col-sm-3">
+            <input class="form-check-input" type="radio" name="exampleRadios1" id="reIngreso" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Reingreso
+            </label>
+          </div>
+        </div>  
+
+        <div class="form-group row sexo flex-items-xs-right">
+          <label for="inputEmail3" class="col-sm-2 col-form-label text-xs-right">Fecha alta: </label>
+          <div class="col-sm-2">
+            <input type="date" class="form-control is-valid llenadoEspaciado" id="fechaAlta" placeholder="calle" required>
+          </div>
+          <label for="inputEmail3" class="col-sm-2 col-form-label text-xs-right">Fecha baja: </label>
+          <div class="col-sm-2">
+            <input type="date" class="form-control is-valid llenadoEspaciado" id="fechaBaja" placeholder="calle" required>
+          </div> 
+        </div>
+
+        <div class="form-group row sexo">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Horario: </label>
+          <div class="col-sm-2">
+            <input class="form-check-input" type="radio" name="exampleRadios2" id="matutino" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Matutino
+            </label>
+          </div>
+          <div class="col-sm-2">
+            <input class="form-check-input" type="radio" name="exampleRadios2" id="vespertino" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Vespertino
+            </label>
+          </div>            
+          <div class="col-sm-3">
+            <input class="form-check-input" type="radio" name="exampleRadios2" id="hrsExtendido" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Horario extendido
+            </label>
+          </div>            
+        </div>
+
+        <div class="form-group row sexo flex-items-xs-between">
+          <label for="inputEmail3" class="col-sm-5 col-form-label">¿Participa en otra(s) actividad(es) dentro del Centro?</label>
+          <div class="col-sm-1">
+            <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios1" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Si
+            </label>
+          </div>
+          <div class="col-sm-1">
+            <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios1" value="option2" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              No
+            </label>
+          </div>
+          <label for="inputEmail3" class="col-sm-2 col-form-label text-xs-right">Cuál(es)</label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control is-valid" id="validationServer01" required>
+          </div>
+
+          <label for="inputEmail3" class="col-sm-4 col-form-label">¿Como se enteró del programa?</label>
+          <div class="col-sm-2">
+            <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios1" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Volante
+            </label>
+          </div>
+          <div class="col-sm-2">
+            <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios1" value="option2" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Cartel
+            </label>
+          </div>
+          <div class="col-sm-2">
+            <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios1" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Manta
+            </label>
+          </div>
+          <div class="col-sm-2">
+            <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios1" value="option2" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Recomendación
+            </label>
+          </div>
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Otros</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control is-valid llenadoEspaciado" id="validationServer01" required>
+          </div>
+
+          <div class="alert alert-success col-sm-12" role="alert">
+            <h4 class="alert-heading" style="margin-bottom: 2rem;">Para uso exclusivo de la oficina</h4>
+            <div class="form-group row sexo">
+              <label for="inputEmail3" class="col-sm-3 col-form-label">Fecha de inscripción</label>
+              <div class="col-sm-4">
+                <input type="date" class="form-control is-valid llenadoEspaciado" id="fechaInscripcion" required>
+              </div> 
+            </div>  
+            <div class="form-group row sexo">
+              <label for="inputEmail3" class="col-sm-3 col-form-label">No. de recibo de inscripción</label>
+              <div class="col-sm-2">
+                <input type="text" class="form-control is-valid" id="noInscripcion" required>
+              </div>
+              <label for="inputEmail3" class="col-sm-4 col-form-label text-xs-right">No. de recibo de material de trabajo</label>
+              <div class="col-sm-3">
+                <input type="text" class="form-control is-valid" id="NoMaterial" required>
+              </div>
+            </div>
+
+          </div>          
+        </div>
+      </form>      
+    </div>  
+
+<!-- Datos -->
+    <footer>
+      <div class="container">
+        <a class="btn btn-success" href="solicitud2.html" role="button">Anterior</a>
+        <button class="btn btn-info" id="boton" onclick="guardar()">Guardar</button>
+        <a class="btn btn-success" href="solicitud4.html" role="button">Siguiente</a>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/data.js"></script>
+  </body>
+</html>

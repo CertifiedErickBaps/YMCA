@@ -1,0 +1,31 @@
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+#header-container{
+	background-color: red;
+	color: white;
+}
+
+.logeo {
+	justify-content: center;
+}
+
+.datos {
+	padding: 50px 0 50px;
+}
+.llenadoEspaciado {
+	margin: 0px 0px 10px;	
+}
+.sexo {
+	align-items: center;
+}
+.titulo {
+	background-color: #373a3c;
+    color: #fff;
+    padding: 0.5em;	
+}
+.contenido {
+	color: #55595c;
+    background-color: #eceeef;
+    padding: .75rem;
+}

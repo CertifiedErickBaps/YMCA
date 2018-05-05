@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-flex.min.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">  
+    <title>YMCA</title>
+    <!-- Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase-firestore.js"></script>
+  </head>
+  
+  <body>
+  <!-- Header -->
+    <header id="header-container">
+      <div class="container">
+        <div class="row flex-items-xs-middle flex-items-xs-between">
+          <div class="col-xs-3">
+            <h1>YMCA</h1>
+          </div>
+        </div>
+      </div>
+    </header>  
+<!-- Header -->
+ 
+<!-- Datos -->
+    <div class="container datos">
+      <div class="row flex-items-xs-middle flex-items-xs-between">
+        <div class="col-xs-7">
+          <h4>Solicitud de inscripción como asociado numerario</h4>
+        </div>
+        <div class="col-xs-3 text-xs-right text-md-center text-lg-center ">
+          <h4>Programas</h4>
+        </div> 
+      </div>    
+    </div>
+
+    <div class="container">
+      <form>
+        <div class="form-group row flex-items-xs-between">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Datos Personales</label>
+          <label for="inputEmail3" class="col-sm-5 col-form-label text-xs-right">No.Clave: </label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control is-valid" placeholder="clave" id="clave" required>
+          </div>
+        </div>            
+        
+        <div class="form-group row flex-items-xs-between">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre completo: </label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control is-valid" id="nombreCompleto" placeholder="appellido paterno, materno y nombre(s)" required>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Domicilio: </label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control is-valid llenadoEspaciado" id="calle" placeholder="calle" required>
+          </div>
+          <div class="col-sm-5">
+            <input type="text" class="form-control is-valid llenadoEspaciado" id="numeroCalle" placeholder="numero exterior o interior" required>
+          </div>
+          <div class="col-sm-6">
+            <input type="text" class="form-control is-valid llenadoEspaciado" id="colonia" placeholder="colonia" required>
+          </div>
+          <div class="col-sm-6">
+            <input type="text" class="form-control is-valid llenadoEspaciado" id="delegacionMunicipio" placeholder="delegacion/municipio" required>
+          </div>
+          <div class="col-sm-2">
+            <input type="text" class="form-control is-valid llenadoEspaciado" id="postal" placeholder="codigo postal" required>
+          </div>
+          <div class="col-sm-2">
+            <input type="text" class="form-control is-valid llenadoEspaciado" id="telefono" placeholder="telefono fijo" required>
+          </div>
+          <div class="col-sm-2">
+            <input type="text" class="form-control is-valid llenadoEspaciado" id="telefono2" placeholder="telefono celular" required>
+          </div>
+          <label for="inputEmail3" class="col-sm-2 col-form-label text-xs-right">CURP: </label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control is-valid llenadoEspaciado" id="curp" required>
+          </div>
+
+          <label for="inputEmail3" class="col-sm-2 col-form-label">CURP madre: </label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control is-valid" id="curpMom" required>
+          </div>
+
+          <label for="inputEmail3" class="col-sm-2 col-form-label">CURP padre: </label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control is-valid" id="curpDad" required>
+          </div>
+        </div>
+
+
+        <div class="form-group row sexo">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Sexo: </label>
+          <div class="col-sm-2">
+            <input class="form-check-input" type="radio" id="masculino" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Masculino
+            </label>
+          </div>
+          <div class="col-sm-2">
+            <input class="form-check-input" type="radio" id="femenino" value="option2">
+            <label class="form-check-label" for="exampleRadios2">
+              Femenino
+            </label>
+          </div>
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Correo electronico: </label>
+          <div class="col-sm-4">
+            <input type="email" class="form-control llenadoEspaciado" id="email" placeholder="user@correo.com">
+          </div>
+
+
+          <label for="inputEmail3" class="col-sm-3 col-form-label">Fecha de nacimiento: </label>
+          <div class="col-sm-3">
+            <input type="date" class="form-control llenadoEspaciado text-xs-center is-valid" id="born" required>
+          </div>
+          <label for="inputEmail3" class="col-sm-3 col-form-label text-xs-right">Edad: </label>
+          <div class="col-sm-3">
+            <input type="number" class="form-control llenadoEspaciado text-xs-center is-valid" id="edad" required>
+          </div>
+          
+
+
+          <label for="inputEmail3" class="col-sm-3 col-form-label text-xs-left">Nombre del padre o tutor: </label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control llenadoEspaciado text-xs-center" id="parentName">
+          </div>
+          <label for="inputEmail3" class="col-sm-2 col-form-label text-xs-right">Parentesco: </label>
+          <div class="col-sm-3">
+            <input type="texto" class="form-control llenadoEspaciado text-xs-center" id="parentesco">
+          </div>
+          <label for="inputEmail3" class="col-sm-3 col-form-label text-xs-left">Programa que solicita: </label>
+          <div class="col-sm-9">
+            <input type="texto" class="form-control llenadoEspaciado text-xs-center is-valid" id="tipoPrograma" required>
+          </div>  
+        </div>
+
+
+        <div class="form-group row flex-items-xs-right">
+          <label for="inputEmail3" class="col-sm-4 col-form-label text-xs-right">México, D.F, a </label>
+          <div class="col-sm-1">
+            <input type="number" class="form-control llenadoEspaciado text-xs-center" id="dia">
+          </div>
+          <label for="inputEmail3" class="col-sm-1 col-form-label text-xs-right">de </label>
+          <div class="col-sm-3">
+            <input type="month" class="form-control llenadoEspaciado text-xs-center" id="fechaActual">
+          </div>  
+        </div> 
+      </form>      
+    </div>  
+
+<!-- Datos -->
+    <footer>
+      <div class="container">
+        <a class="btn btn-success" href="login.html" role="button">Anterior</a>
+        <button class="btn btn-info" id="boton" onclick="guardar()">Guardar</button>
+        <a class="btn btn-success" href="solicitud2.html" role="button">Siguiente</a>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/data.js"></script>
+  </body>
+</html>
